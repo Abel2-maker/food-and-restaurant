@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Abel — Content Writer Portfolio</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      scroll-behavior: smooth;
+    }
+    header {
+      background: url('image/content\ writing\ image.png') no-repeat center/cover;
+      color: #fff;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+    }
+    header .overlay {
+      background-color: rgba(0,0,0,0.5);
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+    }
+    header .content {
+      position: relative;
+      z-index: 1;
+    }
+    .portfolio-img {
+      height: 190px;
+      width: auto;
+      object-fit: cover;
+    }
+    footer {
+      background-color: #222;
+      color: #ddd;
+    }
+
+    /* ...existing code... */
+.portfolio-item img {
+  width: 100%;
+  object-fit: cover;
+  height: 200px; /* Default for desktop */
+}
+
+@media (max-width: 575.98px) {
+  .portfolio-item img {
+    height: 140px; /* Smaller height for mobile, adjust as needed */
+    object-fit: cover;
+  }
+}
+/* ...existing code... */
+  </style>
+</head>
+<body>
+
+<!-- Complex Custom Navbar with Blinking Hamburger + Mobile Dropup -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm fixed-top">
+  <div class="container">
+    <!-- Brand -->
+    <a class="navbar-brand fw-bold d-flex align-items-center" href="index.html">
+      <i class="fa-solid fa-pen-nib me-2 text-primary"></i>Abel Writes
+    </a>
+
+    <!-- Toggler with inner span for blink animation -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+      data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false"
+      aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"><span></span></span>
+    </button>
+
+    <!-- Links -->
+    <div class="collapse navbar-collapse" id="mainNavbar">
+      <ul class="navbar-nav ms-auto">
+
+        <li class="nav-item">
+          <a class="nav-link active" href="index.html#home">
+            <i class="fa-solid fa-house me-1"></i>Home
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="about.html">
+            <i class="fa-solid fa-user me-1"></i>About
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="resume.html">
+            <i class="fa-solid fa-file-lines me-1"></i>Resume
+          </a>
+        </li>
+
+        <!-- Services dropdown -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="services.html" id="servicesDropdown"
+             role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="fa-solid fa-briefcase me-1"></i>Services
+          </a>
+          <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="servicesDropdown">
+            <li><a class="dropdown-item" href="services.html">Services</a></li>
+            <li><a class="dropdown-item" href="blog.html">Blog</a></li>
+            <li><a class="dropdown-item" href="FAQ.html">FAQ</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="services.html#consulting">Consulting</a></li>
+          </ul>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="portfolio.html">
+            <i class="fa-solid fa-image me-1"></i>Portfolio
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="contact.html">
+            <i class="fa-solid fa-blog me-1"></i>Contact
+          </a>
+        </li>
+
+        <li class="nav-item ms-lg-3">
+          <a class="btn btn-primary fw-semibold px-3" href="contact.html">
+            <i class="fa-solid fa-paper-plane me-1"></i>Contact Me
+          </a>
+        </li>
+
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Custom Styles -->
+<style>
+  /* Blink animation keyframes */
+  @keyframes blink {
+    0%, 100% { filter: brightness(2); }
+    50% { filter: brightness(0.5); }
+  }
+
+  /* Mobile hamburger blink style */
+  @media (max-width: 991.98px) {
+    .navbar-dark .navbar-toggler-icon {
+      background-image: none; /* remove default icon graphic */
+      position: relative;
+      width: 1.5em;
+      height: 1.5em;
+    }
+    .navbar-dark .navbar-toggler-icon::before,
+    .navbar-dark .navbar-toggler-icon::after,
+    .navbar-dark .navbar-toggler-icon span {
+      content: '';
+      position: absolute;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background-color: white;
+      animation: blink 1s infinite;
+    }
+    .navbar-dark .navbar-toggler-icon::before { top: 0; }
+    .navbar-dark .navbar-toggler-icon span { top: 50%; transform: translateY(-50%); }
+    .navbar-dark .navbar-toggler-icon::after { bottom: 0; }
+
+    /* Flip dropdowns up when menu is collapsed */
+    .navbar .dropdown-menu {
+      top: auto !important;
+      bottom: 100% !important;
+      margin-bottom: 0.5rem;
+    }
+  }
+</style>
+
+<!-- Hero -->
+<header id="home">
+  <div class="overlay"></div>
+  <div class="container text-center content">
+    <h1 class="display-3 fw-bold">Abel</h1>
+    <p class="lead mb-4">Food & Resturant Content writer</p>
+    <a href="about.html" class="btn btn-primary btn-lg">About Me</a>
+  </div>
+</header>
+
+<!-- About -->
+<section id="about" class="py-5">
+  <div class="container">
+    <div class="row align-items-center">
+
+     <!-- Video Section -->
+<div class="col-md-6 mb-4 mb-md-0 position-relative">
+  <!-- Thumbnail Cover with Play Button -->
+  <div id="videoCover" class="position-relative rounded shadow-sm overflow-hidden" style="cursor: pointer;" onclick="showVideo()">
+    <img src="image/freelance image.jpeg" class="img-fluid" alt="Video Preview">
+    <div class="position-absolute top-50 start-50 translate-middle">
+      <i class="fa-solid fa-circle-play fa-4x text-white glow-icon"></i>
+    </div>
+  </div>
+
+  <!-- Hidden Embedded Video -->
+  <div id="videoPlayer" class="ratio ratio-16x9 d-none mt-3">
+    <iframe 
+      src="https://res.cloudinary.com/dkhflpqbq/video/upload/v1760454446/website_video-3000_gntgeb.mp4" 
+      title="Abel's Intro Video" 
+      allowfullscreen 
+      class="w-100 rounded shadow-sm">
+    </iframe>
+  </div>
+</div>
+
+<style>
+  .glow-icon {
+    animation: glow 1.5s infinite alternate;
+    text-shadow:
+      0 0 8px rgba(255,255,255,0.9),
+      0 0 16px rgba(0,123,255,0.7),
+      0 0 24px rgba(0,123,255,0.5);
+  }
+  @keyframes glow {
+    from { opacity: 0.7; transform: scale(1); }
+    to   { opacity: 1; transform: scale(1.15); }
+  }
+  </style>
+  
+
+      <!-- Text Column -->
+      <div class="col-md-6">
+        <h2>About Me</h2>
+        <p>Hello, I’m Abel Daniel — a former web developer turned full‑time content Writer. I specialize in crafting engaging blog posts, persuasive copy, and SEO‑friendly web content that connects brands with their audience.</p>
+        <p>Whether it’s turning complex ideas into digestible stories or finding the perfect hook for a marketing campaign, I bring precision, creativity, and empathy to every project.</p>
+        <h2>WATCH THIS VIDEO TO KNOW WHAT I REALLY OFFER</h2>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+  <!-- Hidden YouTube Video -->
+  <div id="videoEmbed" class="ratio ratio-16x9 d-none mt-3">
+    <iframe src="" title="Abel's Intro Video" allowfullscreen></iframe>
+  </div>
+</div>
+
+
+     
+
+    </div>
+  </div>
+</section>
+
+<!-- Script to  image with video -->
+
+<script>
+  function showVideo() {
+    document.getElementById("videoCover").classList.add("d-none");
+    document.getElementById("videoPlayer").classList.remove("d-none");
+  }
+  </script>
+  
+
+
+
+<!-- Portfolio -->
+<div class="container py-5">
+    <div class="row g-4">
+      
+      <div class="col-md-4 col-sm-6">
+        <div class="card">
+          <img src="https://i.ibb.co/wrzRJy43/Menu-copy-image.png" class="card-img-top" alt="Document">
+          <div class="card-body">
+            <h5 class="card-title">Menu copy that sells</h5>
+            <p class="card-text">Clear, tempting descriptions that turn browsing into odering.</p>
+            <a href="PDF files/MENU COPY THAT SELLS.pdf" class="btn btn-readmore">Read More</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 col-sm-6">
+        <div class="card">
+          <img src="image/NEW SEO IMAGE.png" class="card-img-top" alt="Document">
+          <div class="card-body">
+            <h5 class="card-title">Local SEO for resturants.</h5>
+            <p class="card-text"> Get discovered by hungary customers nearby- right when they are searching.</p>
+            <a href="PDF files/LOCAL SEO FOR RESTAURANTS.pdf" class="btn btn-readmore">Read More</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 col-sm-6">
+        <div class="card">
+          <img src="image/Brand story telling image.png" class="card-img-top" alt="Document">
+          <div class="card-body">
+            <h5 class="card-title">Brand story telling for food businesses</h5>
+            <p class="card-text">Share your unique flavour and make customers fall in love with your brand.</p>
+            <a href="PDF files/BRAND STORYTELLING FOR FOOD BUSINESSES 3.pdf" class="btn btn-readmore">Read More</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <style>
+    body {
+      background: linear-gradient(135deg, #ece9e6, #ffffff);
+      font-family: "Poppins", sans-serif;
+    }
+
+    .card {
+      border: none;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 6px 25px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease-in-out;
+      background: #fff;
+    }
+
+    .card:hover {
+      transform: translateY(-10px) scale(1.02);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    .card img {
+      height: 220px;
+      object-fit: cover;
+    }
+
+    .card-body {
+      padding: 1.5rem;
+    }
+
+    .card-title {
+      font-weight: 600;
+      font-size: 1.2rem;
+      margin-bottom: 0.8rem;
+      color: #333;
+    }
+
+    .card-text {
+      font-size: 0.95rem;
+      color: #555;
+      margin-bottom: 1.2rem;
+      line-height: 1.5;
+      display: -webkit-box;
+      
+      -webkit-box-orient: vertical;  
+      overflow: hidden;
+    }
+
+    .btn-readmore {
+      border-radius: 30px;
+      padding: 0.5rem 1.5rem;
+      font-weight: 500;
+      background: #0d6efd;
+      border: none;
+      color: #fff;
+      transition: 0.3s;
+    }
+
+    .btn-readmore:hover {
+      background: #0a58ca;
+    }
+  </style>
+
+<!-- Contact -->
+<section id="contact" class="py-5">
+  <div class="container text-center">
+    <h2>Get in Touch</h2>
+    <p class="mb-4">Let’s collaborate on your next big project.</p>
+    <a href="mailto:dan804906@gmail.com" class="btn btn-primary me-2"><i class="fas fa-envelope"></i> Email Me</a>
+    <a href="https://linkedin.com/in/abel-dan-328334290/" class="btn btn-outline-dark"><i class="fab fa-linkedin"></i> LinkedIn</a>
+  </div>
+</section>
+
+<!-- Footer -->
+<!-- Cool Complex Footer -->
+<footer class="bg-dark text-light pt-5 pb-4 mt-5">
+  <div class="container">
+    <div class="row gy-4">
+
+      <!-- Brand + Bio -->
+      <div class="col-lg-4 col-md-6">
+        <h4 class="fw-bold mb-3">
+          <i class="fa-solid fa-pen-nib text-primary me-2"></i>Abel Writes
+        </h4>
+        <p>
+          Crafting words that connect, convert, and captivate — from persuasive ad copy to thought‑provoking articles.
+        </p>
+        <div class="d-flex gap-2 mt-3">
+          <a href="https://www.fb.com/l/6lp1kJRRR" class="btn btn-outline-light btn-sm rounded-circle">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+          <a href="https://x.com/Dandigitals12?t=wwu8UGMDOyA0rwE6gtuaqA&s=09" class="btn btn-outline-light btn-sm rounded-circle">
+            <i class="fab fa-twitter"></i>
+          </a>
+          <a href="https://www.linkedin.com/in/abel-dan-328334290/" class="btn btn-outline-light btn-sm rounded-circle">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+          <a href="#" class="btn btn-outline-light btn-sm rounded-circle">
+            <i class="fab fa-instagram"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="col-lg-2 col-md-6">
+        <h5 class="fw-semibold mb-3">Quick Links</h5>
+        <ul class="list-unstyled">
+          <li><a href="index.html#home" class="text-light text-decoration-none footer-link">Home</a></li>
+          <li><a href="about.html" class="text-light text-decoration-none footer-link">About</a></li>
+          <li><a href="resume.html" class="text-light text-decoration-none footer-link">Resume</a></li>
+          <li><a href="services.html" class="text-light text-decoration-none footer-link">Services</a></li>
+          <li><a href="portfolio.html" class="text-light text-decoration-none footer-link">Portfolio</a></li>
+          <li><a href="contact.html" class="text-light text-decoration-none footer-link">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- Services -->
+      <div class="col-lg-3 col-md-6">
+        <h5 class="fw-semibold mb-3">Services</h5>
+        <ul class="list-unstyled">
+          <li><a href="services.html#copywriting" class="text-light footer-link">Copywriting</a></li>
+          <li><a href="services.html#content" class="text-light footer-link">Content Writing</a></li>
+          <li><a href="services.html#strategy" class="text-light footer-link">Content Strategy</a></li>
+          <li><a href="services.html#consulting" class="text-light footer-link">Consulting</a></li>
+        </ul>
+      </div>
+
+      <!-- Newsletter -->
+      <div class="col-lg-3 col-md-6">
+  <h5 class="fw-semibold mb-3">
+    <i class="fa-solid fa-envelope-open-text me-2 text-primary"></i>Stay in the Loop
+  </h5>
+  <p class="small text-">Get my latest tips, case studies, and offers straight to your inbox.</p>
+
+  <form id="subscribeForm" class="d-flex flex-column flex-sm-row gap-2">
+    <input type="email" name="email" id="emailInput" class="form-control" placeholder="Your Email" required>
+    <button type="submit" class="btn btn-primary">
+      <i class="fa-solid fa-arrow-right"></i>
+    </button>
+  </form>
+
+  <div id="subscribeStatus" class="mt-2 text-success fw-semibold" style="display: none;"></div>
+</div>
+
+
+    </div>
+
+    <hr class="border-secondary mt-4">
+
+    <!-- Bottom Bar -->
+    <div class="d-flex flex-column flex-md-row justify-content-between align-items-center">
+      <p class="mb-0 small">&copy; 2025 Abel Writes. All Rights Reserved.</p>
+      <ul class="list-inline mb-0 small">
+        <li class="list-inline-item"><a href="#" class="text-light footer-link">Privacy Policy</a></li>
+        <li class="list-inline-item"><a href="#" class="text-light footer-link">Terms of Service</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+<!-- Custom Footer CSS -->
+<style>
+  .footer-link:hover {
+    color: var(--bs-primary) !important;
+    padding-left: 4px;
+    transition: all 0.2s ease-in-out;
+  }
+  footer .btn-outline-light:hover {
+    background-color: var(--bs-primary);
+    border-color: var(--bs-primary);
+    color: #fff;
+  }
+</style>
+
+
+<!-- Scripts -->
+ <script src="script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  // Reveal-on-scroll
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  reveals.forEach(el => observer.observe(el));
+</script>
+</body>
+</html>

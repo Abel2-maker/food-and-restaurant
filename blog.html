@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Blog — Abel | Content & Copywriting</title>
+  <meta name="description" content="Insights on copywriting, content strategy, SEO, and freelancing from Abel." />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <style>
+    body { font-family: 'Segoe UI', sans-serif; scroll-behavior: smooth; }
+    .page-header { background: url('image/content\ writing\ image.png') center/cover no-repeat; color:#fff; padding:6rem 0; position:relative; }
+    .page-header::after { content:''; position:absolute; inset:0; background:rgba(0,0,0,0.55); }
+    .page-header .container { position:relative; z-index:1; }
+    .post-card { border:none; box-shadow: 0 6px 18px rgba(0,0,0,0.08); transition: transform .25s, box-shadow .25s; }
+    .post-card:hover { transform: translateY(-4px); box-shadow: 0 12px 30px rgba(0,0,0,0.12); }
+    .post-thumb { height: 190px; object-fit: cover; }
+    .badge-tag { background: #eef3ff; color: #0d6efd; font-weight: 600; }
+    .sidebar-card { border:0; box-shadow: 0 6px 18px rgba(0,0,0,0.06); }
+    .search-input { border-radius: .35rem; }
+    .pagination .page-link { border:0; }
+    footer { background:#222; color:#bbb; }
+  </style>
+</head>
+<body>
+
+<!-- Complex Custom Navbar with Blinking Hamburger + Mobile Dropup -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm fixed-top">
+  <div class="container">
+    <!-- Brand -->
+    <a class="navbar-brand fw-bold d-flex align-items-center" href="index.html">
+      <i class="fa-solid fa-pen-nib me-2 text-primary"></i>Abel Writes
+    </a>
+
+    <!-- Toggler with inner span for blink animation -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+      data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false"
+      aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"><span></span></span>
+    </button>
+
+    <!-- Links -->
+    <div class="collapse navbar-collapse" id="mainNavbar">
+      <ul class="navbar-nav ms-auto">
+
+        <li class="nav-item">
+          <a class="nav-link active" href="index.html#home">
+            <i class="fa-solid fa-house me-1"></i>Home
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="about.html">
+            <i class="fa-solid fa-user me-1"></i>About
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="resume.html">
+            <i class="fa-solid fa-file-lines me-1"></i>Resume
+          </a>
+        </li>
+
+        <!-- Services dropdown -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="services.html" id="servicesDropdown"
+             role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="fa-solid fa-briefcase me-1"></i>Services
+          </a>
+          <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="servicesDropdown">
+            <li><a class="dropdown-item" href="services.html">Services</a></li>
+            <li><a class="dropdown-item" href="blog.html">Blog</a></li>
+            <li><a class="dropdown-item" href="FAQ.html">FAQ</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="services.html#consulting">Consulting</a></li>
+          </ul>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="portfolio.html">
+            <i class="fa-solid fa-image me-1"></i>Portfolio
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="contact.html">
+            <i class="fa-solid fa-blog me-1"></i>Contact
+          </a>
+        </li>
+
+        <li class="nav-item ms-lg-3">
+          <a class="btn btn-primary fw-semibold px-3" href="contact.html">
+            <i class="fa-solid fa-paper-plane me-1"></i>Contact Me
+          </a>
+        </li>
+
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Custom Styles -->
+<style>
+  /* Blink animation keyframes */
+  @keyframes blink {
+    0%, 100% { filter: brightness(2); }
+    50% { filter: brightness(0.5); }
+  }
+
+  /* Mobile hamburger blink style */
+  @media (max-width: 991.98px) {
+    .navbar-dark .navbar-toggler-icon {
+      background-image: none; /* remove default icon graphic */
+      position: relative;
+      width: 1.5em;
+      height: 1.5em;
+    }
+    .navbar-dark .navbar-toggler-icon::before,
+    .navbar-dark .navbar-toggler-icon::after,
+    .navbar-dark .navbar-toggler-icon span {
+      content: '';
+      position: absolute;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background-color: white;
+      animation: blink 1s infinite;
+    }
+    .navbar-dark .navbar-toggler-icon::before { top: 0; }
+    .navbar-dark .navbar-toggler-icon span { top: 50%; transform: translateY(-50%); }
+    .navbar-dark .navbar-toggler-icon::after { bottom: 0; }
+
+    /* Flip dropdowns up when menu is collapsed */
+    .navbar .dropdown-menu {
+      top: auto !important;
+      bottom: 100% !important;
+      margin-bottom: 0.5rem;
+    }
+  }
+</style>
+
+<!-- Header -->
+<section class="page-header text-center">
+  <div class="container">
+    <h1 class="display-5 fw-bold">Blog</h1>
+    <p class="lead">Practical insights on content writing, content, and growth.</p>
+  </div>
+</section>
+
+<!-- Content -->
+<section class="py-5">
+  <div class="container">
+    <div class="row g-5">
+
+      <!-- Main column -->
+      <div class="col-lg-8">
+        <!-- Search + Filters -->
+        <div class="d-flex flex-column flex-md-row align-items-md-center justify-content-between mb-4 gap-3">
+          <div class="flex-grow-1">
+            <div class="input-group">
+              <span class="input-group-text bg-white"><i class="fa-solid fa-magnifying-glass"></i></span>
+              <input id="search" type="search" class="form-control search-input" placeholder="Search posts by title or summary...">
+            </div>
+          </div>
+          <div class="text-nowrap">
+            <button class="btn btn-outline-primary btn-sm filter" data-filter="all">All</button>
+            <button class="btn btn-outline-primary btn-sm filter" data-filter="Copywriting">Copywriting</button>
+            <button class="btn btn-outline-primary btn-sm filter" data-filter="Content Strategy">Content Strategy</button>
+            <button class="btn btn-outline-primary btn-sm filter" data-filter="SEO">SEO</button>
+            <button class="btn btn-outline-primary btn-sm filter" data-filter="Freelancing">Freelancing</button>
+            <button class="btn btn-outline-primary btn-sm filter" data-filter="Case Study">Case Study</button>
+          </div>
+        </div>
+
+    
+<!-- Posts grid -->
+<div id="posts" class="row g-4">
+
+  <!-- Post -->
+  <div class="col-md-6 post" data-tags="Copywriting,SEO">
+    <article class="card post-card h-200">
+      <img src="https://i.postimg.cc/qvR3jLT3/im-2.jpg" class="card-img-top post-thumb" alt="Write headlines that convert">
+      <div class="card-body">
+        <div class="mb-2">
+          <span class="badge badge-tag me-1">Copywriting</span>
+          <span class="badge badge-tag">SEO</span>
+        </div>
+        <h5 class="card-title">
+          <a class="stretched-link text-decoration-none"
+             href="https://www.linkedin.com/posts/abel-dan-328334290_here-are-10-headline-frameworks-you-can-steal-activity-7379800430857490432-drbQ?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEaHM9ABRTc8OoGEeeXmoZc6N45pHic7C9Y"
+             data-linkedin="https://www.linkedin.com/posts/abel-dan-328334290_here-are-10-headline-frameworks-you-can-steal-activity-7379800430857490432-drbQ?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEaHM9ABRTc8OoGEeeXmoZc6N45pHic7C9Y">
+            10 Headline Formulas That Consistently Convert
+          </a>
+        </h5>
+        <p class="card-text text-muted">A swipe‑worthy set of headline patterns with real examples and when to use each.</p>
+      </div>
+      <div class="card-footer bg-white small text-muted">7 min read • Updated recently</div>
+    </article>
+  </div>
+
+  <div class="col-md-6 post" data-tags="Content Strategy">
+    <article class="card post-card h-100">
+      <img src="https://i.postimg.cc/Kj3Z11S4/im-3.png" class="card-img-top post-thumb" alt="Content pillars">
+      <div class="card-body">
+        <div class="mb-2"><span class="badge badge-tag">Content Strategy</span></div>
+        <h5 class="card-title">
+          <a class="stretched-link text-decoration-none"
+             href="https://www.linkedin.com/in/abel-dan-328334290/"
+             data-linkedin="https://www.linkedin.com/in/abel-dan-328334290/">
+            Build Content Pillars in 60 Minutes
+          </a>
+        </h5>
+        <p class="card-text text-muted">A fast workflow to map themes, subtopics, and formats into a sustainable calendar.</p>
+      </div>
+      <div class="card-footer bg-white small text-muted">6 min read • Editorial</div>
+    </article>
+  </div>
+
+  <div class="col-md-6 post" data-tags="SEO,Case Study">
+    <article class="card post-card h-100">
+      <img src="https://i.postimg.cc/Jn85hkf4/im-4.jpg" class="card-img-top post-thumb" alt="SEO case study">
+      <div class="card-body">
+        <div class="mb-2">
+          <span class="badge badge-tag me-1">SEO</span><span class="badge badge-tag">Case Study</span>
+        </div>
+        <h5 class="card-title">
+          <a class="stretched-link text-decoration-none"
+             href="https://www.linkedin.com/in/abel-dan-328334290/"
+             data-linkedin="https://www.linkedin.com/in/abel-dan-328334290/">
+            From Page 7 to Top 3: A Practical SEO Rewrite
+          </a>
+        </h5>
+        <p class="card-text text-muted">Exact steps I took to restructure, re‑angle, and internally link a low‑performing page.</p>
+      </div>
+      <div class="card-footer bg-white small text-muted">8 min read • Case Study</div>
+    </article>
+  </div>
+
+  <div class="col-md-6 post" data-tags="Freelancing,Copywriting">
+    <article class="card post-card h-100">
+      <img src="https://i.postimg.cc/R0fKQMkY/im-5.jpg" class="card-img-top post-thumb" alt="Pricing guide">
+      <div class="card-body">
+        <div class="mb-2">
+          <span class="badge badge-tag me-1">Freelancing</span><span class="badge badge-tag">Copywriting</span>
+        </div>
+        <h5 class="card-title">
+          <a class="stretched-link text-decoration-none"
+             href="https://www.linkedin.com/in/abel-dan-328334290/"
+             data-linkedin="https://www.linkedin.com/in/abel-dan-328334290/">
+            Pricing Copywriting Projects Without Guesswork
+          </a>
+        </h5>
+        <p class="card-text text-muted">Value‑based pricing, scoping templates, and handling revision creep with grace.</p>
+      </div>
+      <div class="card-footer bg-white small text-muted">5 min read • Playbook</div>
+    </article>
+  </div>
+
+  <div class="col-md-6 post" data-tags="Copywriting">
+    <article class="card post-card h-100">
+      <img src="https://i.postimg.cc/j2XYYRvP/im-6.jpg" class="card-img-top post-thumb" alt="Landing page copy">
+      <div class="card-body">
+        <div class="mb-2"><span class="badge badge-tag">Copywriting</span></div>
+        <h5 class="card-title">
+          <a class="stretched-link text-decoration-none"
+             href="https://www.linkedin.com/in/abel-dan-328334290/"
+             data-linkedin="https://www.linkedin.com/in/abel-dan-328334290/">
+            How to Structure Landing Pages That Convert
+          </a>
+        </h5>
+        <p class="card-text text-muted">Hero, proof, benefits, objections, CTA — a tested wireframe for any offer.</p>
+      </div>
+      <div class="card-footer bg-white small text-muted">9 min read • Framework</div>
+    </article>
+  </div>
+
+  <div class="col-md-6 post" data-tags="SEO,Content Strategy">
+    <article class="card post-card h-100">
+      <img src="https://i.postimg.cc/KYSbTpKK/im-7.jpg" class="card-img-top post-thumb" alt="Keyword strategy">
+      <div class="card-body">
+        <div class="mb-2"><span class="badge badge-tag me-1">SEO</span><span class="badge badge-tag">Content Strategy</span></div>
+        <h5 class="card-title">
+          <a class="stretched-link text-decoration-none"
+             href="https://www.linkedin.com/in/abel-dan-328334290/"
+             data-linkedin="https://www.linkedin.com/in/abel-dan-328334290/">
+            Zero‑Fluff Keyword Research for Writers
+          </a>
+        </h5>
+        <p class="card-text text-muted">A writer‑first approach to topics, intent, and internal linking that actually ranks.</p>
+      </div>
+      <div class="card-footer bg-white small text-muted">7 min read • Guide</div>
+    </article>
+  </div>
+
+  <div class="col-md-6 post" data-tags="Case Study,Content Strategy">
+    <article class="card post-card h-100">
+      <img src="https://i.postimg.cc/90j1tTdY/im-8.webp" class="card-img-top post-thumb" alt="Case study content engine">
+      <div class="card-body">
+        <div class="mb-2"><span class="badge badge-tag me-1">Case Study</span><span class="badge badge-tag">Content Strategy</span></div>
+        <h5 class="card-title">
+          <a class="stretched-link text-decoration-none"
+             href="https://www.linkedin.com/in/abel-dan-328334290/"
+             data-linkedin="https://www.linkedin.com/in/abel-dan-328334290/">
+            Building a Content Engine for a Fintech Startup
+          </a>
+        </h5>
+        <p class="card-text text-muted">From zero to a repeatable system: pillars, briefs, workflows, and metrics.</p>
+      </div>
+      <div class="card-footer bg-white small text-muted">10 min read • Case Study</div>
+    </article>
+  </div>
+
+  <div class="col-md-6 post" data-tags="Freelancing">
+    <article class="card post-card h-100">
+      <img src="https://i.postimg.cc/MZCX55jS/im-9.webp" class="card-img-top post-thumb" alt="Client onboarding">
+      <div class="card-body">
+        <div class="mb-2"><span class="badge badge-tag">Freelancing</span></div>
+        <h5 class="card-title">
+          <a class="stretched-link text-decoration-none"
+             href="https://www.linkedin.com/in/abel-dan-328334290/"
+             data-linkedin="https://www.linkedin.com/in/abel-dan-328334290/">
+            Client Onboarding That Sets Projects Up to Win
+          </a>
+        </h5>
+        <p class="card-text text-muted">Discovery questions, scope docs, and kickoff rituals clients actually appreciate.</p>
+      </div>
+      <div class="card-footer bg-white small text-muted">6 min read • Process</div>
+    </article>
+  </div>
+
+  <div class="col-md-6 post" data-tags="Copywriting,Case Study">
+    <article class="card post-card h-100">
+      <img src="https://i.postimg.cc/WzhrZ1Kw/im-10.png" class="card-img-top post-thumb" alt="Email sequence">
+      <div class="card-body">
+        <div class="mb-2"><span class="badge badge-tag me-1">Copywriting</span><span class="badge badge-tag">Case Study</span></div>
+        <h5 class="card-title">
+          <a class="stretched-link text-decoration-none"
+             href="https://www.linkedin.com/in/abel-dan-328334290/"
+             data-linkedin="https://www.linkedin.com/in/abel-dan-328334290/">
+            A 5‑Email Sequence That Revived Stalled Leads
+          </a>
+        </h5>
+        <p class="card-text text-muted">Angle, objections, and proof — the exact structure we used to re‑engage.</p>
+      </div>
+      <div class="card-footer bg-white small text-muted">5 min read • Case Study</div>
+    </article>
+  </div>
+
+</div>
+
+<!-- LinkedIn confirmation modal -->
+<div class="modal fade" id="linkedinConfirmModal" tabindex="-1" aria-labelledby="linkedinConfirmLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="linkedinConfirmLabel">Open LinkedIn?</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">View this sample on LinkedIn — allow site to open LinkedIn?</div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
+        <button type="button" class="btn btn-primary" id="linkedinConfirmYes">Yes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+(function () {
+  const modalEl = document.getElementById('linkedinConfirmModal');
+  if (!modalEl) return;
+  const bsModal = new bootstrap.Modal(modalEl);
+  let targetUrl = null;
+
+  // Intercept clicks only on links with data-linkedin
+  document.addEventListener('click', function (e) {
+    const a = e.target.closest('a[data-linkedin]');
+    if (!a) return;
+    e.preventDefault();
+    targetUrl = a.getAttribute('data-linkedin') || a.href;
+    modalEl.querySelector('.modal-body').textContent = 'View this sample on LinkedIn — allow site to open LinkedIn?';
+    bsModal.show();
+  });
+
+  // Yes -> open in new tab
+  document.getElementById('linkedinConfirmYes').addEventListener('click', function () {
+    if (targetUrl) window.open(targetUrl, '_blank', 'noopener');
+    bsModal.hide();
+    targetUrl = null;
+  });
+
+  modalEl.addEventListener('hidden.bs.modal', function () { targetUrl = null; });
+})();
+</script>
+
+
+        <!-- Pagination (static UI; optional to wire up) -->
+        <nav class="mt-4" aria-label="Blog pagination">
+          <ul class="pagination justify-content-center">
+            <li class="page-item disabled"><span class="page-link">Previous</span></li>
+            <li class="page-item active"><span class="page-link">1</span></li>
+            <li class="page-item"><a class="page-link" href="#">2</a></li>
+            <li class="page-item"><a class="page-link" href="#">3</a></li>
+            <li class="page-item"><a class="page-link" href="#">Next</a></li>
+          </ul>
+        </nav>
+      </div>
+
+      <!-- Sidebar -->
+      <aside class="col-lg-4">
+        <div class="card sidebar-card mb-4 p-3">
+          <div class="d-flex align-items-center">
+            <img src="image/My image..jpg" class="rounded-circle me-3" width="56" height="56" alt="Abel">
+            <div>
+              <h6 class="mb-0">Abel</h6>
+              <small class="text-muted">Content Writer & Copywriter</small>
+            </div>
+          </div>
+          <p class="mt-3 mb-0 text-muted">I help brands turn ideas into clear, compelling words that drive action.</p>
+        </div>
+
+        <div class="card sidebar-card mb-4 p-3">
+          <h6 class="mb-3">Categories</h6>
+          <ul class="list-unstyled mb-0">
+            <li class="mb-2"><a href="#" class="text-decoration-none category" data-cat="Copywriting">Copywriting</a></li>
+            <li class="mb-2"><a href="#" class="text-decoration-none category" data-cat="Content Strategy">Content Strategy</a></li>
+            <li class="mb-2"><a href="#" class="text-decoration-none category" data-cat="SEO">SEO</a></li>
+            <li class="mb-2"><a href="#" class="text-decoration-none category" data-cat="Freelancing">Freelancing</a></li>
+            <li><a href="#" class="text-decoration-none category" data-cat="Case Study">Case Study</a></li>
+          </ul>
+        </div>
+
+        <div class="card sidebar-card p-3">
+          <h6 class="mb-3">Recent Posts</h6>
+          <ul class="list-unstyled mb-0 small">
+            <li class="mb-2"><a href="post.html" class="text-decoration-none">10 Headline Formulas That Consistently Convert</a></li>
+            <li class="mb-2"><a href="post.html" class="text-decoration-none">Build Content Pillars in 60 Minutes</a></li>
+            <li class="mb-2"><a href="post.html" class="text-decoration-none">From Page 7 to Top 3: A Practical SEO Rewrite</a></li>
+            <li><a href="post.html" class="text-decoration-none">Pricing Copywriting Projects Without Guesswork</a></li>
+          </ul>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<!-- Cool Complex Footer -->
+<footer class="bg-dark text-light pt-5 pb-4 mt-5">
+  <div class="container">
+    <div class="row gy-4">
+
+      <!-- Brand + Bio -->
+      <!-- Brand + Bio -->
+      <div class="col-lg-4 col-md-6">
+        <h4 class="fw-bold mb-3">
+          <i class="fa-solid fa-pen-nib text-primary me-2"></i>Abel Writes
+        </h4>
+        <p>
+          Crafting words that connect, convert, and captivate — from persuasive ad copy to thought‑provoking articles.
+        </p>
+        <div class="d-flex gap-2 mt-3">
+          <a href="https://www.fb.com/l/6lp1kJRRR" class="btn btn-outline-light btn-sm rounded-circle">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+          <a href="https://x.com/Dandigitals12?t=wwu8UGMDOyA0rwE6gtuaqA&s=09" class="btn btn-outline-light btn-sm rounded-circle">
+            <i class="fab fa-twitter"></i>
+          </a>
+          <a href="https://www.linkedin.com/in/abel-dan-328334290/" class="btn btn-outline-light btn-sm rounded-circle">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+          <a href="#" class="btn btn-outline-light btn-sm rounded-circle">
+            <i class="fab fa-instagram"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="col-lg-2 col-md-6">
+        <h5 class="fw-semibold mb-3">Quick Links</h5>
+        <ul class="list-unstyled">
+          <li><a href="index.html#home" class="text-light text-decoration-none footer-link">Home</a></li>
+          <li><a href="about.html" class="text-light text-decoration-none footer-link">About</a></li>
+          <li><a href="resume.html" class="text-light text-decoration-none footer-link">Resume</a></li>
+          <li><a href="services.html" class="text-light text-decoration-none footer-link">Services</a></li>
+          <li><a href="portfolio.html" class="text-light text-decoration-none footer-link">Portfolio</a></li>
+          <li><a href="contact.html" class="text-light text-decoration-none footer-link">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- Services -->
+      <div class="col-lg-3 col-md-6">
+        <h5 class="fw-semibold mb-3">Services</h5>
+        <ul class="list-unstyled">
+          <li><a href="services.html#copywriting" class="text-light footer-link">Copywriting</a></li>
+          <li><a href="services.html#content" class="text-light footer-link">Content Writing</a></li>
+          <li><a href="services.html#strategy" class="text-light footer-link">Content Strategy</a></li>
+          <li><a href="services.html#consulting" class="text-light footer-link">Consulting</a></li>
+        </ul>
+      </div>
+
+      <!-- Newsletter -->
+      <div class="col-lg-3 col-md-6">
+  <h5 class="fw-semibold mb-3">
+    <i class="fa-solid fa-envelope-open-text me-2 text-primary"></i>Stay in the Loop
+  </h5>
+  <p class="small text-">Get my latest tips, case studies, and offers straight to your inbox.</p>
+
+  <form id="subscribeForm" class="d-flex flex-column flex-sm-row gap-2">
+    <input type="email" name="email" id="emailInput" class="form-control" placeholder="Your Email" required>
+    <button type="submit" class="btn btn-primary">
+      <i class="fa-solid fa-arrow-right"></i>
+    </button>
+  </form>
+
+  <div id="subscribeStatus" class="mt-2 text-success fw-semibold" style="display: none;"></div>
+</div>
+
+
+    </div>
+
+    <hr class="border-secondary mt-4">
+
+    <!-- Bottom Bar -->
+    <div class="d-flex flex-column flex-md-row justify-content-between align-items-center">
+      <p class="mb-0 small">&copy; 2025 Abel Writes. All Rights Reserved.</p>
+      <ul class="list-inline mb-0 small">
+        <li class="list-inline-item"><a href="#" class="text-light footer-link">Privacy Policy</a></li>
+        <li class="list-inline-item"><a href="#" class="text-light footer-link">Terms of Service</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+<!-- Custom Footer CSS -->
+<style>
+  .footer-link:hover {
+    color: var(--bs-primary) !important;
+    padding-left: 4px;
+    transition: all 0.2s ease-in-out;
+  }
+  footer .btn-outline-light:hover {
+    background-color: var(--bs-primary);
+    border-color: var(--bs-primary);
+    color: #fff;
+  }
+</style>
+
+
+<!-- Scripts -->
+ <script src="script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  // Reveal-on-scroll
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  reveals.forEach(el => observer.observe(el));
+</script>
+
+<script>
+  // Simple search + filter
+  const posts = [...document.querySelectorAll('.post')];
+  const search = document.getElementById('search');
+  const filterBtns = document.querySelectorAll('.filter');
+  const catLinks = document.querySelectorAll('.category');
+
+  function applyFilters(tag='all', term='') {
+    const t = term.trim().toLowerCase();
+    posts.forEach(card => {
+      const tags = card.dataset.tags.toLowerCase();
+      const title = card.querySelector('.card-title').innerText.toLowerCase();
+      const summary = card.querySelector('.card-text').innerText.toLowerCase();
+
+      const tagOk = (tag === 'all') || tags.includes(tag.toLowerCase());
+      const textOk = !t || title.includes(t) || summary.includes(t);
+      card.style.display = (tagOk && textOk) ? '' : 'none';
+    });
+  }
+
+  filterBtns.forEach(btn => btn.addEventListener('click', e => {
+    const chosen = e.currentTarget.dataset.filter;
+    filterBtns.forEach(b => b.classList.remove('active'));
+    e.currentTarget.classList.add('active');
+    applyFilters(chosen, search.value);
+  }));
+
+  catLinks.forEach(link => link.addEventListener('click', e => {
+    e.preventDefault();
+    const chosen = e.currentTarget.dataset.cat;
+    document.querySelector(`.filter[data-filter="${chosen}"]`)?.click();
+  }));
+
+  search.addEventListener('input', () => {
+    const current = document.querySelector('.filter.active')?.dataset.filter || 'all';
+    applyFilters(current, search.value);
+  });
+</script>
+</body>
+</html>
